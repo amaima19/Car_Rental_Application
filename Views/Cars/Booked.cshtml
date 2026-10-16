@@ -1,0 +1,41 @@
+﻿@model List<global::Car.Models.Car>
+
+@{
+    ViewData["Title"] = "Booked Cars";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+    <h1 class="mb-0">Booked Cars</h1>
+
+
+    
+</div>
+<div class="table-responsive">
+    <table class="table table-striped table-hover align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Car Name</th>
+                    <th>Price Per Day</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var car in Model)
+                {
+                    <tr>
+                        <td>@car.id</td>
+                        <td>@car.name</td>
+                        <td>PKR @car.price.ToString("N0")</td>
+                        <td>
+                            <span class="badge bg-warning text-dark">
+                                Booked
+                            </span>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    
